@@ -1,0 +1,8 @@
+type Query {
+    getGames: [Game!]!
+}
+
+type Game {
+    _id: ID
+    title: String
+}

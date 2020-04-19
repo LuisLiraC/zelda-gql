@@ -1,0 +1,27 @@
+type Query {
+    getCharacters(race: String, limit: Int): [Character!]!
+    getCharacter(_id: ID): Character!
+}
+
+type Mutation {
+    addCharacter(character: NewCharacterInput): String
+    deleteCharacter(_id: ID): String!
+}
+
+type Subscription {
+    newCharacter: Character!
+}
+
+type Character {
+    _id: ID
+    name: String
+    race: String
+    games: [Game]
+}
+
+input NewCharacterInput {
+    name: String!
+    race: String!
+    games: [String]!
+}
+
